@@ -4,7 +4,7 @@ class CreateGroups < ActiveRecord::Migration
 
       t.references :parent
       t.string :name
-      t.integer :mobile
+      t.string :mobile
       t.text :address
       t.string :email
       t.references :groups

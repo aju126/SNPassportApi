@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160615131429) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
-    t.integer  "mobile"
+    t.string   "mobile"
     t.text     "address"
     t.string   "email"
     t.integer  "groups_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160615131429) do
   create_table "groups", force: :cascade do |t|
     t.integer  "parent_id"
     t.string   "name"
-    t.integer  "mobile"
+    t.string   "mobile"
     t.text     "address"
     t.string   "email"
     t.integer  "groups_id"
@@ -57,7 +57,8 @@ ActiveRecord::Schema.define(version: 20160615131429) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "mobile"
+    t.string   "password"
+    t.string   "mobile"
     t.text     "address"
     t.string   "email"
     t.integer  "roles_id"

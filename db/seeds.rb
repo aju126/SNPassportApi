@@ -6,15 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-ROLE_ADMIN = Role.create('Administrator')
-ROLE_PUSH = Role.create('Maintainer')
-ROLE_PULL = Role.create('Getter')
+ROLE_ADMIN = Role.create(id: 1, name: 'Administrator')
+ROLE_PUSH = Role.create(id: 2, name: 'Maintainer')
+ROLE_PULL = Role.create(id: 3, name: 'Getter')
 
-STATUS_OPEN = Status.create('Open')
-STATUS_PROGRESS = Status.create('Progress')
-STATUS_SUBMITTED = Status.create('Submitted')
-STATUS_VERIFICATION = Status.create('Verification')
-STATUS_DONE = Status.create('Done')
-STATUS_REJECTED = Status.create('Rejected')
+STATUS_OPEN = StatusType.create(name: 'Open')
+STATUS_PROGRESS = StatusType.create(name: 'Progress')
+STATUS_SUBMITTED = StatusType.create(name: 'Submitted')
+STATUS_VERIFICATION = StatusType.create(name: 'Verification')
+STATUS_DONE = StatusType.create(name: 'Done')
+STATUS_REJECTED = StatusType.create(name: 'Rejected')
 
+USER_AJITH = User.create(name: 'ajith', password: 'ajith', mobile: 9986003200, roles_id: 1)
 
