@@ -10,9 +10,16 @@ class ApplicationController < ActionController::Base
     password = request.headers['password']
     verified = false
     if username && password
-      verified = true if User.where(name: username).first.password.eql?(password)
+      if User.where(name: username).first.password.eql?(password)
+        verified = true
+        @current_user = username
+      end
     end
     render_login_failure(error) unless verified
+  end
+
+  def current_user
+    @current_user
   end
 
   def render_login_failure(message)
