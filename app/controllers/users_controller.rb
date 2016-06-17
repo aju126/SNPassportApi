@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.filter_by(roles_id: params[:roles_id], name: params[:name], mobile: params[:mobile])
   end
 
   # GET /users/1
@@ -69,6 +69,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :mobile, :address, :email)
+      params.require(:user).permit(:name, :mobile, :address, :email, :roles_id)
     end
 end
